@@ -15,6 +15,7 @@ function App() {
 
   return (
     <>
+    {/* inline style mit isActive oder isPending kann man in funktion benutzen */}
   <ul>
     <li>
       <NavLink to='/' style={({isActive}) =>{
@@ -29,15 +30,15 @@ function App() {
     <li>
       <NavLink to='/products'>Products</NavLink>
       </li>
-
+     {/* Zwei link schieben wir in Products layout */}
     {/* <li><Link to='/productOne'>ProductOne</Link></li>
     <li><Link to='/productTwo'>ProductTwo</Link></li> */}
   </ul>
      <Routes>
        <Route path='/' element={<Home />}/>
        <Route path='/about' element={<About />}/>
-       <Route path='/products' element={<Products/>}>
-          {/* <Route index element={<Products />}/> */}
+       <Route path='/products' element={<ProductsLayout/>} >
+          <Route index element={<Products />}/>
           <Route path='productOne' element={<ProductOne />} />
           <Route path='productTwo' element={<ProductTwo />} />
        </Route>
